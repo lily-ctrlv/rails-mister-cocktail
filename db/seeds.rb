@@ -13,6 +13,7 @@ url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 ingredients_list = open(url).read
 ingredients_array = JSON.parse(ingredients_list)
 
-ingredient_array['drinks'].each do |ingredient|
+ingredients_array['drinks'].each do |ingredient|
+  # puts ingredient['strIngredient1']
   Ingredient.create(name: ingredient['strIngredient1'])
 end
